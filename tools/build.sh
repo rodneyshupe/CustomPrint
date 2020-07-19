@@ -22,6 +22,8 @@ function beginswith() {
 
 ROOT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" > /dev/null && cd .. > /dev/null && pwd )"
 
+echo "Working Directory: ${ROOT_DIR}"
+
 LATEST_TAG=$(git tag -l | tail -1)
 LATEST_VERSION="${LATEST_TAG:1}"
 
