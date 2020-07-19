@@ -17,7 +17,7 @@ setup(
         include=['CustomPrint.py'],
         exclude=['*.txt', '*.md']
     ),
-    version = '0.0.1',
+    version = '0.0.2',
     license = "GNU General Public License v3.0",
     description = 'CustomPrint - Python Library Providing Functions for customized print functions.',
     long_description=read('README.md'),
