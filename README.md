@@ -16,5 +16,5 @@ Function can then be called directly
 ## Install
 Install using pip
 ```sh
-pip3 install https://github.com/rodneyshupe/CustomPrint/archive/v0.0.3.tar.gz
+pip3 install https://github.com/rodneyshupe/CustomPrint/archive/v1.0.0.tar.gz
 ```
