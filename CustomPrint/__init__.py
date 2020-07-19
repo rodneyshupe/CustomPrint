@@ -4,6 +4,8 @@
 import sys, traceback
 #import argparse
 
+__version__ = "v.1.0.0"
+
 class ansi_colors:
     # Reset
     Reset='\033[0m'       # Text Reset

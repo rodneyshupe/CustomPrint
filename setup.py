@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 import os
-from setuptools import setup, find_packages
+from setuptools import setup
 
 # Utility function to read the README file.
 # Used for the long_description.  It's nice, because now 1) we have a top level
@@ -17,7 +17,7 @@ setup(
         include=['CustomPrint'],
         exclude=['*.txt', '*.md']
     ),
-    version = '0.0.3',
+    version = '1.0.0',
     license = "GNU General Public License v3.0",
     description = 'CustomPrint - Python Library Providing Functions for customized print functions.',
     long_description=read('README.md'),
