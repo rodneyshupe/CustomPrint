@@ -29,11 +29,13 @@ LATEST_VERSION="${LATEST_TAG:1}"
 
 echo "Latest version: ${LATEST_VERSION}"
 read -p "Step 1: Enter new version: " NEW_VERSION
+NEW_TAG="v${NEW_VERSION}"
 
 echo
 echo "Step 2: Update version in source files from ${LATEST_VERSION} to ${NEW_VERSION}."
 proceed
-sed -i "s/\/archive\/${LATEST_TAG}/\/archive\/${LATEST_TAG}/g" "$ROOT_DIR/README.md"
+sed -i "s/\/archive\/${LATEST_TAG}/\/archive\/${NEW_TAG}/g" "$ROOT_DIR/README.md"
+sed -i "s/\/archive\/${LATEST_VERSION}/\/archive\/${NEW_VERSION}/g" "$ROOT_DIR/README.md"
 sed -i "s/version = '${LATEST_VERSION}'/version = '${NEW_VERSION}'/g" "$ROOT_DIR/setup.py"
 for file in $(find "${ROOT_DIR}" -type f -name "__init__.py" ); do
   if beginswith "${ROOT_DIR}/build" "${file}"; then
@@ -62,7 +64,6 @@ python3 setup.py clean --all        # Clean the previous build package
 python3 setup.py sdist bdist_wheel  # Create build package
 pip3 install .                      # Install from local package
 
-NEW_TAG="v${NEW_VERSION}"
 echo
 echo "Step 6: Create new tag (${NEW_TAG}) and build."
 proceed
